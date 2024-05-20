@@ -1,0 +1,20 @@
+1) Используем готовую переменную и изменим название в админке. Правка в файле /admin/language/ru-ru/catalog/product.php 
+(скриншот 1 https://drive.google.com/file/d/1VP_56fDXoEWb8RbGl1lv2lDOzht62xI0/view?usp=sharing)
+
+$_['entry_upc']              = 'UPC';
+на 
+$_['entry_upc']              = 'Закупочная цена';
+
+2) Зададим название переменной в карточке товара. Правка в файле /catalog/language/ru-ru/product/product.php
+(скриншот 2 https://drive.google.com/file/d/1s0lpc3DkUA_0e9gLIa_BqaeB752pWmTc/view?usp=sharing)
+
+$_['text_zakup_price']     = 'Закупочная цена';
+
+3) Соединим нашу переменную с названием которое мы задали выше. Правка в файле /catalog/view/theme/unishop2/template/product/product.twig (скриншот 3 https://drive.google.com/file/d/1k1XlJwmgaDoWYEZ-nd1sNYQO9QqHYXIx/view?usp=sharing)
+
+{% if upc %}
+	<div class="product-data__item upc"><div class="product-data__item-div"><span class="product-data__item-span">{{ text_zakup_price }}:</span></div> {{ upc }}</div>
+{% endif %}
+
+4) На скриншоте 4 отображение в админке https://drive.google.com/file/d/14WfuzZSS9lgIr97NPnt_mqqs7tXJzsa4/view?usp=sharing
+5) На скриншоте 5 отображение карточки товара на сайте https://drive.google.com/file/d/1-u5tqlXC4n6i1Zs0Q-qgLpmmuY034BZp/view?usp=sharing
